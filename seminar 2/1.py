@@ -1,7 +1,4 @@
-class Node:
-    def __init__(self, data = 0):
-        self.data = data
-        self.next = None
+from classes import Node
 
 def hasCycle(head):
     if head == None or head.next == None: # если в списке один элемент или ноль (даже нельзы поставить указатели)
