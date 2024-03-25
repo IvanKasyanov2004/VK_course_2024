@@ -1,27 +1,4 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-class List:
-    def __init__(self, array):
-        if len(array) != 0:
-            self.head = Node(array[0])
-        else:
-            self.head = None
-        current = self.head
-        for i in range(1, len(array)):
-            new_node = Node(array[i])
-            current.next = new_node
-            current = new_node
-
-
-def printList(list):
-    cur = list.head
-    while cur != None:
-        print(cur.data, end=' ')
-        cur = cur.next
-
+from classes import *
 
 def reverseLinkedList(list):
     prev = None
@@ -37,23 +14,23 @@ def reverseLinkedList(list):
 
 
 list1 = List([1, 2, 3, 4, 5])
-printList(list1)
+list1.printList()
 reverseLinkedList(list1)
 print("->", end = ' ')
-printList(list1)
+list1.printList()
 print()
 
 #пустой массив
 list2 = List([1])
-printList(list2)
+list2.printList()
 reverseLinkedList(list2)
 print("->", end = ' ')
-printList(list2)
+list2.printList()
 print()
 
 #пустой массив
 list3 = List([])
-printList(list3)
+list3.printList()
 reverseLinkedList(list3)
 print("->", end = ' ')
-printList(list3)
+list3.printList()

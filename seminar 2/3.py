@@ -1,23 +1,28 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+from classes import *
 
-class List:
-    def __init__(self, array):
-        if len(array) != 0:
-            self.head = Node(array[0])
-        else:
-            self.head = None
-        current = self.head
-        for i in range(1, len(array)):
-            new_node = Node(array[i])
-            current.next = new_node
-            current = new_node
+def findMiddle(list):
+    slow = fast = list.head
+    while fast != None and fast.next != None: #возвращает правый после середины
+        slow = slow.next
+        fast = fast.next.next
+    return slow
 
+list1 = List([1, 2, 3, 4, 5])
+list1.printList()
+print("->", end = ' ')
+print(findMiddle(list1).data)
 
-def printList(list):
-    cur = list.head
-    while cur != None:
-        print(cur.data, end=' ')
-        cur = cur.next
+list2 = List([1, 2, 3, 4, 5, 6])
+list2.printList()
+print("->", end = ' ')
+print(findMiddle(list2).data)
+
+list3 = List([1, 2])
+list3.printList()
+print("->", end = ' ')
+print(findMiddle(list3).data)
+
+list4 = List([1])
+list4.printList()
+print("->", end = ' ')
+print(findMiddle(list4).data)
